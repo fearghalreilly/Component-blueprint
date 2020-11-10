@@ -3,17 +3,22 @@ import './ThumbNailGrid.styles.css'
 import Thumbnail from '../Thumbnail/ThumbNail.component'
 
 
-const ThumbNailGrid = () => {
+
+const ThumbNailGrid = ({thumbnails, onClick}) => {
     return (
 <div className='thumbnail-section'>
-<Thumbnail  />
-<Thumbnail  />
-<Thumbnail  />
-<Thumbnail  />
-<Thumbnail  />
-<Thumbnail  />
+    {thumbnails.map((thumbnail, i) => (
+         <Thumbnail 
+         key={thumbnail.imgUrl}
+         imgUrl={thumbnail.imgUrl}
+         index={i}
+         onClick={onClick}/>
+    )
+)}
 </div>
     )
 }
 
 export default ThumbNailGrid
+
+
