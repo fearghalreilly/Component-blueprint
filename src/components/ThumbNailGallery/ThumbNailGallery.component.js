@@ -6,8 +6,9 @@ import axios from 'axios'
 
 
 const ThumbNailGallery = () => {
-    const [thumbnails, setThumbnails] = useState([])
-    const [activeIndex, setActiveIndex] = useState(0)
+    const [thumbnails, setThumbnails] = useState([]) 
+    const [activeIndex, setActiveIndex] = useState(0) 
+    const [number, setNumber] = useState(0)
 
     useEffect(() => {
         axios
@@ -22,12 +23,24 @@ const ThumbNailGallery = () => {
 const handleClick = e => {
     const activeIndex = e.target.getAttribute('data-index')
     setActiveIndex(activeIndex)
+    
 }
+
+
+
+const nextSlide = () => {
+    
+    setActiveIndex((+activeIndex) +1)
+}
+
+
 
     return (
         <div className='gallery-section'>
-       <ActiveThumbNailWindow activeThumbnail={thumbnails[activeIndex]} />
-        <ThumbNailGrid thumbnails={thumbnails} onClick={handleClick} />
+            <ActiveThumbNailWindow activeThumbnail={thumbnails[activeIndex]} />
+            <ThumbNailGrid thumbnails={thumbnails} onClick={handleClick} />
+            <button className='test' onClick={nextSlide} ></button>
+   
         </div>
 
     )
