@@ -28,6 +28,8 @@ const handleClick = e => {
 
 
 
+
+
 const nextSlide = () => {
     if (activeIndex === thumbnails.length -1){
         return( setActiveIndex(0))
@@ -40,14 +42,24 @@ const prevSlide = () => {
     } else setActiveIndex((+activeIndex) -1)
 }
 
+document.addEventListener('keydown', function(e) {
+    switch (e.keyCode) {
+    case 37:
+        prevSlide()
+    break;
+    case 39:
+        nextSlide()
+    break;
+    }
 
+});
 
     return (
         <div className='gallery-section'>
             <ActiveThumbNailWindow activeThumbnail={thumbnails[activeIndex]} />
             <ThumbNailGrid thumbnails={thumbnails} onClick={handleClick} />
-            <button className='test' onClick={prevSlide} >-</button>
-            <button className='test' onClick={nextSlide} >+</button>
+            <button className='test' onClick={prevSlide}  >-</button>
+            <button className='test' onClick={nextSlide}>+</button>
    
         </div>
 
