@@ -54,12 +54,14 @@ document.addEventListener('keydown', function(e) {
 
 });
 
+
+
+
     return (
         <div className='gallery-section'>
-            <ActiveThumbNailWindow activeThumbnail={thumbnails[activeIndex]} />
+            <ActiveThumbNailWindow activeThumbnail={thumbnails[activeIndex]} onClickL={prevSlide} onClickR={nextSlide}/>
             <ThumbNailGrid thumbnails={thumbnails} onClick={handleClick} />
-            <button className='test' onClick={prevSlide}  >-</button>
-            <button className='test' onClick={nextSlide}>+</button>
+            
    
         </div>
 

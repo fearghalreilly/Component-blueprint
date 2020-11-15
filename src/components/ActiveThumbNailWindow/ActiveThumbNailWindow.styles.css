@@ -1,3 +1,37 @@
 .active-thumbnail-section {
   height: 600px;
 }
+
+.photothing {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+  background-size: cover;
+  height: 60px;
+  width: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 10;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+#arrow-right {
+  background-color: transparent;
+}
+
+#arrow-left {
+  background-color: transparent;
+}
